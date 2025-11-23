@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meri pyari shona babu😘🐇✨</title>
+    <!-- Load Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the particle effect */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            user-select: none;
+            animation: fall linear infinite;
+            z-index: 10;
+            font-size: clamp(1rem, 4vw, 2rem);
+            opacity: 0;
+            transform: translateY(-100vh);
+        }
+
+        @keyframes fall {
+            0% {
+                opacity: 1;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 0.5;
+                transform: translateY(105vh);
+            }
+        }
+
+        /* Set 'Inter' as the default font, fallback to sans-serif */
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Tulip background with 'I love you' overlay */
+        .birthday-bg {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?tulips,spring'); /* Random tulips image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes background stationary when scrolling */
+            position: relative;
+        }
+        .birthday-bg::before {
+            content: "I love you I love you I love you I love you I love you"; /* Repeated 'I love you' */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.1); /* Very subtle white text */
+            font-size: clamp(2rem, 10vw, 8rem);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 1; /* Below the main card */
+            word-wrap: break-word; /* Ensures text wraps within bounds */
+            overflow: hidden; /* Hides overflow if text is too big for small screens */
+            text-shadow: 0 0 5px rgba(0,0,0,0.1); /* Slight shadow for readability */
+        }
+
+        /* Adjust the card's z-index to be above the 'I love you' overlay */
+        .main-card {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-pink': '#ec4899', /* Rose 500 */
+                        'secondary-gold': '#fbbf24', /* Amber 400 */
+                        'text-color': '#4a4a4a', /* A softer dark gray for readability */
+                        'tulip-card-bg': 'rgba(255, 255, 255, 0.95)', /* Slightly more opaque white for card */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="birthday-bg text-text-color flex items-center justify-center p-4">
+
+    <!-- Particle Container --><div id="particle-container" class="fixed top-0 left-0 w-full h-full overflow-hidden"></div>
+
+    <!-- Main Content Card --><div class="main-card w-full max-w-md bg-tulip-card-bg backdrop-blur-sm shadow-2xl rounded-3xl p-8 md:p-10 text-center transform hover:scale-[1.01] transition-transform duration-500 ease-in-out border-4 border-primary-pink/50">
+
+        <!-- Header --><h1 class="text-4xl md:text-6xl font-extrabold text-primary-pink mb-4 leading-tight">
+            Happy Birthday! 🎉
+        </h1>
+        
+        <h2 class="text-3xl md:text-4xl font-semibold text-fuchsia-600 mb-6">
+            To my amazing Khaguuu 🥰
+        </h2>
+
+        <!-- Main Message --><p class="text-xl md:text-2xl text-text-color mb-8 leading-relaxed whitespace-pre-wrap">
+            hey meri pyari si shona babu mujhe pata h meh tumhare sath nhi hu na hi tumhari family but sunona iss akelepan meh bhi agr tumhe meri kami ho aur apni family ki toh khud se call karke baat kar lena.  Aur haan meri bachi suno jaruri nhi h sirf bahari sundarta mere liye tumhari woh rooh ki sundarta zayada maine rakhti h naa ki jismani aur haan shukriya meri life meh aane ke liye haan meh manta hu ki ab todha sa bahak gya hua tum se gandi gandi aur bheki bheki baate karne lagta hu pyar todha sa kaam mehsoos ho rha hoga tumko but meri shona aisi koi baat nhi h humko bhi akelapan lagta h ki jisko itna pyar karta hu wo bhi paas nhi h mere   Bhale hi aaj ka din tumhara utna aacha na gya ho lekin ek din tumhara janamadin aisa banega jisse tum apni jindagi se kabhi bhul na bhi nhi chahogi aur haan shukriya meri zindagi meh aane ke liye. 🎉🎊🫶🏻🥰✨🐇💋✨
+        </p>
+
+        <!-- Signature/Celebration Emojis --><div class="text-5xl mb-8">
+            🫶🏻💖✨
+        </div>
+        <p class="text-2xl font-semibold text-primary-pink">
+            tumhara ek pyaara sa mota bacha Dracula babu.
+        </p>
+
+        <!-- Secret Message Area (Removed as the main message is already very detailed) --></div>
+
+    <!-- JavaScript for Particle Effect and Interaction --><script>
+        const particleContainer = document.getElementById('particle-container');
+        const particles = ['💖', '❤️', '✨', '🎂', '🌟', '🌷']; // Added tulip emoji
+        const numParticles = 30;
+
+        /**
+         * Creates and animates a single particle element.
+         * @param {string} emoji The emoji character to use.
+         */
+        function createParticle(emoji) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = emoji;
+            
+            const startX = Math.random() * 100;
+            particle.style.left = `${startX}vw`;
+
+            const duration = Math.random() * 8 + 6;
+            particle.style.animationDuration = `${duration}s`;
+
+            const delay = Math.random() * 10;
+            particle.style.animationDelay = `${delay}s`;
+
+            particle.style.fontSize = `${Math.random() * 0.8 + 1}rem`;
+
+            particleContainer.appendChild(particle);
+
+            particle.addEventListener('animationiteration', () => {
+                particle.remove();
+                createParticle(emoji);
+            });
+            setTimeout(() => {
+                particle.remove();
+                createParticle(emoji);
+            }, (duration + delay) * 1000);
+        }
+
+        // Initialize the particle stream
+        for (let i = 0; i < numParticles; i++) {
+            const emoji = particles[Math.floor(Math.random() * particles.length)];
+            createParticle(emoji);
+        }
+
+        // Removed showSecretMessage as per new request (no secret message button needed)
+    </script>
+</body>
+</html>
+
